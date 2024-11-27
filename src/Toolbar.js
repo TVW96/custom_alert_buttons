@@ -1,6 +1,6 @@
 import React from 'react';
 import AlertButton from './AlertButton';
-import PropTypes from 'prop-types';
+import Test from './Test';
 
 function Toolbar({ message, children }) {
 
@@ -12,8 +12,8 @@ function Toolbar({ message, children }) {
     ];
 
     return (
-        <div>
-            <h1>Toolbar component renders 2 AlertButton components with different messages and children.</h1>
+        <div style={{ width: "100vw", height: "90vh" }}>
+            <h1>Toolbar component renders 2 AlertButton components with different messages and children:</h1>
             {buttons.map(props => (
                 props.message.includes("Downloading") && (
                     < div className='downloading' >
@@ -37,13 +37,9 @@ function Toolbar({ message, children }) {
                     </div>
                 )
             ))}
+            <Test />
         </div >
     );
-}
-
-Toolbar.propTypes = {
-    message: PropTypes.string.isRequired,
-    children: PropTypes.string.isRequired
 }
 
 export default Toolbar;
